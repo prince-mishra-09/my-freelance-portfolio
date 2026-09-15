@@ -200,10 +200,11 @@
 .imageLink {
   display: block;
   width: 100%;
-  aspect-ratio: 16/9; /* Large expansive cinematic format */
+  aspect-ratio: 16/10;
   border-radius: 8px;
   overflow: hidden;
   background-color: var(--border-color);
+  position: relative;
 }
 
 .imagePlaceholder {
@@ -216,6 +217,8 @@
   text-align: center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
 }
 
 .imageLink:hover .imagePlaceholder {

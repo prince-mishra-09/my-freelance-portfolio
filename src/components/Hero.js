@@ -68,8 +68,8 @@ export default function Hero() {
               <div className={styles.mobileNotch}></div>
               <div className={styles.frameContent}>
                 <Image 
-                  src="/images/projects/jk-hospital/jk-hospital-mobile.webp" 
-                  alt="JK Hospital mobile website preview" 
+                  src="/images/projects/interior/interior-design-mobile.webp" 
+                  alt="Interior Design mobile website preview" 
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'top' }}
                   priority 
