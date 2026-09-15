@@ -1,0 +1,37 @@
+.pageWrapper {
+  padding-top: 15vh;
+  padding-bottom: var(--space-24);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-8);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.content p {
+  margin: 0;
+}
+
+.highlight {
+  color: var(--text-primary);
+  font-weight: 500;
+}

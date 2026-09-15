@@ -1,13 +1,13 @@
 .categoriesSection {
   background-color: #FFFFFF; /* Using a crisp white to contrast against the F7F7F5 background */
-  padding: var(--space-12) 0;
+  padding: var(--space-8) 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 
 .header {
   max-width: 800px;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
   opacity: 0;
   animation: fadeUpIn 1s forwards;
   animation-timeline: view();
@@ -47,7 +47,7 @@
 .row {
   display: flex;
   flex-direction: column;
-  padding: var(--space-6) 0;
+  padding: var(--space-4) 0;
   border-top: 1px solid var(--border-color);
   text-decoration: none;
   color: var(--text-primary);

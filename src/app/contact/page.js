@@ -22,12 +22,12 @@ export default function ContactPage() {
             <p className={styles.directTitle}>Prefer direct contact?</p>
             <ul className={styles.contactLinks}>
               <li>
-                <a href="https://wa.me/placeholder" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send?phone=919889338352&text=Hi%20Prince%2C%20I'm%20interested%20in%20starting%20a%20project%20with%20Xwaked!" target="_blank" rel="noopener noreferrer">
                   Chat on WhatsApp &rarr;
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@placeholder.com">
+                <a href="mailto:mrprimi91@gmail.com">
                   Email me directly &rarr;
                 </a>
               </li>

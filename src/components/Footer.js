@@ -24,8 +24,8 @@ export default function Footer() {
             <div className={styles.linkColumn}>
               <h4 className={styles.columnTitle}>Connect</h4>
               <ul>
-                <li><a href="https://wa.me/placeholder">WhatsApp</a></li>
-                <li><a href="mailto:hello@placeholder.com">Email</a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=919889338352&text=Hi%20Prince%2C%20I'm%20interested%20in%20starting%20a%20project%20with%20Xwaked!" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li><a href="mailto:mrprimi91@gmail.com">Email</a></li>
               </ul>
             </div>
           </div>

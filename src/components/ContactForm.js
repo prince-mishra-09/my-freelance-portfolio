@@ -54,6 +54,7 @@ export default function ContactForm() {
     phone: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
   const handleNext = () => {
@@ -82,16 +83,37 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim()) {
       setError("Name and Email are required.");
       return;
     }
     
-    // Simulate submission
     setError("");
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message.');
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError(err.message || "An unexpected error occurred. Please try again or contact via WhatsApp.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSelect = (field, value) => {
@@ -231,8 +253,14 @@ export default function ContactForm() {
         )}
 
         {currentStep === stepsData.length - 1 && (
-          <button type="button" onClick={handleSubmit} className="btn-primary">
-            Start the Conversation &rarr;
+          <button 
+            type="button" 
+            onClick={handleSubmit} 
+            className="btn-primary"
+            disabled={isSubmitting}
+            style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
+          >
+            {isSubmitting ? 'Sending...' : 'Start the Conversation \u2192'}
           </button>
         )}
       </div>
