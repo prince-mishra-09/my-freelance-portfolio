@@ -1,0 +1,175 @@
+.processSection {
+  padding: var(--space-16) 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.header {
+  max-width: 650px;
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Timeline Layout --- */
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .timelineContainer {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-6);
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .step {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+}
+
+/* --- Markers & Connectors --- */
+.stepMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .stepMarker {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2; /* keep above connector */
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Vertical Connector (Mobile/Tablet) */
+.connector {
+  width: 1px;
+  flex: 1;
+  background-color: var(--border-color);
+  margin-top: var(--space-2);
+  margin-bottom: calc(var(--space-8) * -1 + var(--space-2));
+}
+
+/* Horizontal Connector (Desktop) */
+@media (min-width: 1024px) {
+  .connector {
+    height: 1px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    background-color: var(--border-color);
+    position: absolute;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+
+/* --- Content --- */
+.stepContent {
+  padding-bottom: var(--space-8);
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .stepContent {
+    padding-bottom: 0;
+    padding-right: var(--space-6);
+  }
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 1024px) {
+  .stepTitle {
+    margin-top: 0;
+  }
+}
+
+.stepDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Subtle Hover interaction on entire step */
+.step:hover .number {
+  border-color: var(--text-primary);
+  color: var(--accent-color);
+}
+
+/* --- CTA Footer --- */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-12);
+}
+
+.ctaBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+  background-color: #FFFFFF;
+  padding: var(--space-12) var(--space-8);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ctaText {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

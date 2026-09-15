@@ -1,0 +1,129 @@
+.ctaSection {
+  padding: var(--space-16) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeScaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .ctaContainer {
+      animation: fadeScaleUp linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
+}
+
+.headline {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.break {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .break {
+    display: inline;
+  }
+}
+
+.supportingCopy {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+  max-width: 700px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .buttonGroup {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+}
+
+.primaryButton {
+  padding: var(--space-5) var(--space-8);
+  font-size: 1.25rem;
+}
+
+.whatsappAction {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.whatsappAction:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.reassurance {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.reassurance::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color);
+  margin: 0 auto var(--space-4) auto;
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes fadeScaleUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaContainer {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

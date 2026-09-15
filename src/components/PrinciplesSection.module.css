@@ -1,0 +1,147 @@
+.principlesSection {
+  background-color: var(--bg-primary); /* Keeping it harmonious */
+  padding: var(--space-24) 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.manifestoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+@media (min-width: 1024px) {
+  .manifestoGrid {
+    flex-direction: row;
+    gap: var(--space-24);
+    align-items: flex-start;
+  }
+}
+
+/* --- Intro Column --- */
+.introColumn {
+  flex: 1;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .introColumn {
+    position: sticky;
+    top: var(--space-24);
+  }
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-6);
+  color: var(--text-primary);
+}
+
+.supportingCopy {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* --- Principles Column --- */
+.principlesColumn {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .principlesColumn {
+    gap: var(--space-16);
+  }
+}
+
+.principleItem {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeUpScroll 0.8s forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 25%;
+}
+
+.principleHeader {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--space-4);
+}
+
+.numeral {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.divider {
+  color: var(--border-color);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.principleTitle {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.principleDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* --- Transition Block --- */
+.transitionBlock {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-24);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.transitionSentence {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.dim {
+  color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeUpScroll {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principleItem {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
