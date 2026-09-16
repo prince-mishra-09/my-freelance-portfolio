@@ -88,5 +88,16 @@ export const projects = [
     description: "High-speed grocery and e-commerce delivery interface.",
     coverImage: "/images/projects/ecommerce/ecommerce-desktop.webp",
     filterTag: "E-commerce"
+  },
+  {
+    id: "devaksa",
+    title: "Devaksa",
+    category: "Corporate / Business",
+    url: "https://devaksa.org/",
+    slug: "/work/devaksa",
+    tier: 1,
+    description: "A professional digital experience built to drive business goals.",
+    coverImage: "",
+    filterTag: "Professional"
   }
 ];

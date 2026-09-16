@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Section from './Section';
 import styles from './TrustSection.module.css';
 
@@ -47,29 +48,33 @@ export default function TrustSection() {
             
             <p className={styles.note}>Real proof &gt; polished promises.</p>
 
-            {/* Testimonial Placeholder */}
+            {/* Testimonial */}
             <blockquote className={styles.quote}>
-              "Real client testimonial will appear here. The structure is set for an authentic, impactful quote explaining the business value delivered."
+              "Working with Xwaked was a seamless experience. They understood our business goals perfectly and delivered a digital experience that exceeded our expectations."
             </blockquote>
             
             <div className={styles.authorArea}>
               <div className={styles.avatarPlaceholder}>
-                <span className={styles.avatarText}>Photo</span>
+                <span className={styles.avatarText}>NC</span>
               </div>
               <div className={styles.authorInfo}>
-                <span className={styles.authorName}>[Client Name Placeholder]</span>
-                <span className={styles.authorRole}>[Role], [Company Placeholder]</span>
-                <Link href="#" className={styles.projectLink}>View Project &rarr;</Link>
+                <span className={styles.authorName}>Nishant Singh Chahuhaan</span>
+                <span className={styles.authorRole}>Devaksa</span>
+                <a href="https://devaksa.org/" target="_blank" rel="noopener noreferrer" className={styles.projectLink}>Visit Website &rarr;</a>
               </div>
             </div>
 
           </div>
 
-          {/* WhatsApp Screenshot Placeholder */}
-          <div className={styles.whatsappPlaceholder}>
-            <div className={styles.whatsappInner}>
-              <p>[Optional WhatsApp screenshot proof will appear here]</p>
-            </div>
+          {/* WhatsApp Screenshot */}
+          <div className={styles.whatsappPlaceholder} style={{ position: 'relative', overflow: 'hidden', padding: 0 }}>
+            <Image 
+              src="/images/trust/devaska.png" 
+              alt="WhatsApp review from Nishant Singh Chahuhaan"
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
           
         </div>

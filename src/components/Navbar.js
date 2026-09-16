@@ -1,7 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const isActive = (path) => {
+    return pathname === path || pathname?.startsWith(path + '/');
+  };
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.navContainer}`}>
@@ -10,11 +19,11 @@ export default function Navbar() {
         </Link>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <li><Link href="/work" className={styles.navLink}>Work</Link></li>
-            <li><Link href="/services" className={styles.navLink}>Services</Link></li>
-            <li><Link href="/process" className={styles.navLink}>Process</Link></li>
-            <li><Link href="/about" className={styles.navLink}>About</Link></li>
-            <li><Link href="/contact" className={styles.navLink}>Contact</Link></li>
+            <li><Link href="/work" className={`${styles.navLink} ${isActive('/work') ? styles.active : ''}`}>Work</Link></li>
+            <li><Link href="/services" className={`${styles.navLink} ${isActive('/services') ? styles.active : ''}`}>Services</Link></li>
+            <li><Link href="/process" className={`${styles.navLink} ${isActive('/process') ? styles.active : ''}`}>Process</Link></li>
+            <li><Link href="/about" className={`${styles.navLink} ${isActive('/about') ? styles.active : ''}`}>About</Link></li>
+            <li><Link href="/contact" className={`${styles.navLink} ${isActive('/contact') ? styles.active : ''}`}>Contact</Link></li>
           </ul>
         </nav>
         <div className={styles.navCta}>

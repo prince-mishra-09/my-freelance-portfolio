@@ -1,5 +1,5 @@
 .categoriesSection {
-  background-color: #FFFFFF; /* Using a crisp white to contrast against the F7F7F5 background */
+  background-color: #FFFFFF !important; /* Using a crisp white to contrast against the F7F7F5 background */
   padding: var(--space-8) 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);

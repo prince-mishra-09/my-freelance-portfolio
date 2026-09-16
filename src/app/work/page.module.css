@@ -197,6 +197,13 @@
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .visualWrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .imageLink {
   display: block;
   width: 100%;

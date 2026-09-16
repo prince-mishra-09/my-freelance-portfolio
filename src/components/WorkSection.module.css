@@ -25,7 +25,7 @@
 .projects {
   display: flex;
   flex-direction: column;
-  gap: var(--space-32);
+  gap: var(--space-16);
 }
 
 .projectRow {

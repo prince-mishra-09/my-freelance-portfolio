@@ -117,6 +117,7 @@
   display: block;
   transition: border-color 0.2s ease;
   position: relative;
+  flex-shrink: 0;
 }
 
 .radioOption.selected .radioDot {
